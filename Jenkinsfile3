@@ -1,0 +1,31 @@
+node{
+    
+    stage('git checkout'){
+       git credentialsId: 'git', url: 'https://github.com/botondlaxmi/cicd.git' 
+        
+    }
+    
+    stage('build & test'){
+        def mavenHome = tool name: 'maven 3' , type:'maven'
+        def mavenCMD = "${mavenHome}/bin/mvn" 
+        sh "${mavenCMD} clean package"
+    }
+    
+    stage('build docker image'){
+        def dockerHome = tool name: 'dockerinstall'
+        def CMD = "${dockerHome}/bin/docker" 
+        sh "${CMD} build -t laxmikanth242/bootcamp3:1.0.1 ."
+        sh "${CMD} run -p 8888:8888 -d laxmikanth242/bootcamp3:1.0.1"
+    }
+         
+    //stage('push docker iage to dockerhub'){
+    //    withCredentials([string(credentialsId: 'passwd', variable: 'dockercreds')]) {
+    //    sh "docker login -u laxmikanth242 -p ${dockercreds}"
+    //    }
+     //   sh 'docker push laxmikanth242/bootcamp3:1.0.1'
+    //}
+    
+    stage('run docker image'){
+        
+    }
+}
