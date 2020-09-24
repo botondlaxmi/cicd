@@ -31,6 +31,6 @@ node{
     //}
     
     stage('run docker image'){
-        sshCommand remote: remote, command: "ls -lrt"
+        sshCommand remote: remote, command: "docker run -p 8888:8888 -d laxmikanth242/bootcamp3:1.0.1"
     }
 }
