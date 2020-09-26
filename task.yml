@@ -1,12 +1,9 @@
 - name : ec2-launcher
   hosts : localhost
   connection : local
-  become : False
   tasks :
   - name : launch ec2
     ec2 :
-     aws_access_key : AKIAYJBVGHLD5I2QHLNQ
-     aws_secret_key : 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
      instance_type : t2.micro
      key_name : devops
      image : ami-04fcd96153cb57194
