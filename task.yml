@@ -1,6 +1,5 @@
 - name : ec2-launcher
   hosts : localhost
-  become : false
   connection : local
   tasks :
   - name : launch ec2
