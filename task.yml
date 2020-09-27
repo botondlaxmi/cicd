@@ -4,6 +4,8 @@
   tasks :
   - name : launch ec2
     ec2 :
+     aws_access_key : AKIAYJBVGHLDZRBRGTMC
+     aws_secret_key : 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
      instance_type : t2.micro
      key_name : devops
      image : ami-07efac79022b86107
