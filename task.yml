@@ -6,10 +6,10 @@
     ec2 :
      instance_type : t2.micro
      key_name : devops
-     image : ami-04fcd96153cb57194
+     image : ami-07efac79022b86107
      region : us-east-2
-     group : launch-wizard-1
+     group : launch-wizard-2
      count : 1
-     vpc_subnet_id : subnet-c4d0a688
+     vpc_subnet_id : subnet-5ddf0f36
      wait : yes
      assign_public_ip : yes
